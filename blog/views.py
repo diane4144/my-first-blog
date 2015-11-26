@@ -1,3 +1,5 @@
+import requests
+
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Post, Comment
@@ -85,3 +87,4 @@ def comment_remove(request, pk):
     post_pk = comment.post.pk
     comment.delete()
     return redirect('blog.views.post_detail', pk=post_pk)
+
